@@ -1,0 +1,46 @@
+h1{
+
+    text-align: center;
+
+}
+
+img{
+
+    width: 1%;
+
+}
+
+.gras, .italique, .barré, .lien, .plus, .minus, .gauche, .droite, .centré, .justifié, .générer {
+
+    width: 4%;
+
+}
+
+textarea {
+    border:2px solid black !important;
+
+}
+
+img {
+
+    width: 25%;
+
+}
+
+.wysiwyg{
+
+    text-align: center;
+
+}
+
+.editor{
+
+    margin: 0 auto;
+
+    width: 830px;
+
+    height: 201px;
+
+    border: 1px solid black;
+
+}
