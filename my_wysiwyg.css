@@ -1,46 +1,30 @@
 h1{
-
-    text-align: center;
-
+	text-align: center;
 }
 
 img{
-
-    width: 1%;
-
+	width: 1%;
 }
 
 .gras, .italique, .barré, .lien, .plus, .minus, .gauche, .droite, .centré, .justifié, .générer {
-
-    width: 4%;
-
+	width: 4%;
 }
 
 textarea {
-    border:2px solid black !important;
-
+	border:2px solid black !important;
 }
 
 img {
-
-    width: 25%;
-
+	width: 25%;
 }
 
 .wysiwyg{
-
-    text-align: center;
-
+	text-align: center;
 }
 
 .editor{
-
-    margin: 0 auto;
-
-    width: 830px;
-
-    height: 201px;
-
-    border: 1px solid black;
-
+	margin: 0 auto;
+	width: 830px;
+	height: 201px;
+	border: 1px solid black;
 }
