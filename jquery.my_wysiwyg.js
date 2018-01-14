@@ -3,7 +3,7 @@
   $.fn.my_wysiwyg=function(options)
   {
     var buttons = {
-      buttons : ['gras', 'italique', 'barré', 'couleur', 'police', 'lien', 'taille', 'plus', 'minus', 'gauche', 'droite', 'centré', 'justifié', 'générer', 'enregistrer']
+      buttons : ['gras', 'italique', 'barré', 'couleur', 'police', 'lien', 'taille', 'plus', 'minus', 'gauche', 'droite', 'centré', 'justifié', 'générer', 'enregistrer', 'youtube', 'dailymotion', 'image']
     };
     var parameters = $.extend(buttons, options);
     return this.each(function()
@@ -149,7 +149,7 @@
       };
 
       if ($.inArray("enregistrer", parameters.buttons) != -1) {
-        wrap.find(".buttons").append("<button class='enregistrer'><img src='misc/justify.png'/></button>");
+        wrap.find(".buttons").append("<button class='enregistrer'><img src='misc/save.png'/></button>");
         wrap.find(".enregistrer").click(function() {
           var text = $(".editor").html();
 
@@ -157,6 +157,52 @@
         });
       };
 
+      if ($.inArray("youtube", parameters.buttons) != -1) {
+        wrap.find(".buttons").append("<button class='youtube'>Youtube</button>");
+        wrap.find(".youtube").click(function() {
+          var video = prompt("Please enter your URL", "https://");
+          var urlReplace = video.replace("watch?v=", "embed/");
+          var embed = '<iframe width="560" height="315" src="'+ urlReplace+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+          wrap.find(".editor").append(embed);
+        });
+      };
+
+      if ($.inArray("dailymotion", parameters.buttons) != -1) {
+        wrap.find(".buttons").append("<button class='dailymotion'>Daylimotion</button>");
+        wrap.find(".dailymotion").click(function() {
+          var video = prompt("Please enter your URL", "https://");
+          var urlRep = video.replace("video/", "embed/video/");
+          var add = '<iframe frameborder="0" width="480" height="270" src="'+ urlRep +'" allowfullscreen></iframe>';
+          wrap.find(".editor").append(add);
+        });
+      };
+
+      if ($.inArray("image", parameters.buttons) != -1) {
+        wrap.find(".buttons").append("<input class='image' type ='file'>");
+        wrap.find(".image").change(function() {
+            if (this.files && this.files[0]) {
+              var reader = new FileReader();
+              reader.onloadend = function (e) {
+                $('.editor').append("<img src="+ reader.result +">")
+              }
+              reader.readAsDataURL(this.files[0]);
+            }
+          });
+          // $(".image").change(function(){
+          //   readURL(this);
+          // });
+        }
+
+
+
+
+
+//       if ($.inArray("image", parameters.buttons) != -1) {
+//       wrap.find(".buttons").append("<input type = 'file' webkitdirectory>");
+//       wrap.find(".editor").click = function() {
+//
+//     });
+// };
 
     });
   };
