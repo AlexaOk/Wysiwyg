@@ -142,27 +142,31 @@
           var html = html.replace(myRegex, "\n");
           var str = html.split("\n");
 
+console.log(str);
+
+var content = "";
           $.each(str, function( index, value ) {
+
             var str1 = "<p> " + value + "</p>";
-console.log(str1);
-            var n = wrap.find("textarea").html(str1);
+             content += str1;
+            console.log(content);
+            var n = wrap.find("textarea").html(content);
+
           });
-                      wrap.find("textarea").toggle();
-                      wrap.find(".editor").toggle();
+
+
+
+          wrap.find("textarea").toggle();
+          wrap.find(".editor").toggle();
 				});
 			};
 
       if ($.inArray("enregistrer", parameters.buttons) != -1) {
-        wrap.find(".buttons").append("<button class='enregistrer'><img src='misc/center.png'/></button>");
-        wrap.find(".enregistrer").click(function() {
-
-          $('enregistrer').load('enregistrer.php', function() {
-                 localStorage.setItem('enregistrer', $enregistrer.html());
-             });
-
-          document.execCommand('justifyCenter', false, null);
-        });
-      };
+  				wrap.find(".buttons").append("<button class='enregistrer'><img src='misc/justify.png'/></button>");
+  				wrap.find(".enregistrer").click(function() {
+  					document.execCommand('save', false, null);
+  				});
+  			};
 
 
     });
