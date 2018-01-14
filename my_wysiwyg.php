@@ -11,7 +11,7 @@
 	<h1>My Wysiwyg</h1>
 
 	<textarea style="display:none;"></textarea>
-	<div class="editor" contenteditable="true"></div>
+	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.my_wysiwyg.js"></script>
 	<script>
